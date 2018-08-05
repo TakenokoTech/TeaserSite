@@ -1,7 +1,7 @@
 {
   "name": "teasersite",
   "version": "0.1.0",
-  "homepage":"https://takenokotech.github.io/TeaserSite",
+  "homepage":"https://takenokotech.github.io/TeaserSite/build",
   "private": true,
   "dependencies": {
     "react": "^16.4.2",
