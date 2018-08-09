@@ -1,21 +1,28 @@
 {
   "name": "teasersite",
   "version": "0.1.0",
-  "homepage":"https://takenokotech.github.io/TeaserSite",
+  "homepage": "https://takenokotech.github.io/TeaserSite",
   "private": true,
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "three": "^0.95.0",
+    "three-fbx-loader": "^1.0.3",
+    "three-orbit-controls": "^82.1.0",
+    "react-three-renderer": "^3.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "http-server ./sample -o"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0"
+    "expose-loader": "^0.7.5",
+    "gh-pages": "^1.2.0",
+    "http-server": "^0.11.1"
   }
 }
