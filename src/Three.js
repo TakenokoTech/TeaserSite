@@ -6,8 +6,8 @@ import 'three/examples/js/controls/OrbitControls';
 import 'three/examples/js/loaders/GLTFLoader';
 import 'three/examples/js/loaders/VRMLoader';
 
-// import model from './vrm/konono.vrm'
-import model from './vrm/AliciaSolid.vrm'
+import model from './vrm/konono.vrm'
+// import model from './vrm/AliciaSolid.vrm'
 
 // 幅、高さ取得
 const width = window.innerWidth;
@@ -69,7 +69,7 @@ loader.load(model, function (vrm) {
 // レンダリング
 const animation = (() => {
     renderer.render(scene, camera);
-    controls.update();
+    // controls.update();
     requestAnimationFrame(animation);
 })
 

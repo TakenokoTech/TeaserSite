@@ -10,6 +10,12 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
+    <script src="%PUBLIC_URL%/unity/Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "%PUBLIC_URL%/unity/Build/Build.json");
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,6 +31,10 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+    <div id="header"></div>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 100%; height: 600px; margin: auto"></div>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.

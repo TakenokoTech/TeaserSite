@@ -1,0 +1,46 @@
+#overview {
+    height: 600px;
+    padding: 16px;
+}
+
+#character_dialog {
+    display: inline-block;
+    padding: 16px;
+    margin: 64px 0;
+    background-color: #90e7ff66;
+    border: #6222 solid 2px;
+    border-radius: 8px;
+}
+
+#chara_name {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#chara_grade {
+    padding: 4px 0;
+}
+
+#subtitle1 {
+    width: 100%;
+    align-content: center;
+    background-color: #222;
+}
+
+.image_cell {
+    width: 180px;
+    height: 180px;
+    padding: 8px;
+}
+
+.size_title {
+    padding: 32px;
+    font-size: 2.0em;
+    color: #43d7ff;
+}
+
+.size_overview {
+    padding: 0 32px 32px;
+    font-size: 1.2em;
+    color: #FFF;
+}

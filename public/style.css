@@ -1,0 +1,16 @@
+body {
+    background-color: #F6F6F6
+}
+
+#root {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.webgl-content {
+    position: fixed;
+    width: 80%;
+    z-index: 1;
+    left: 20%;
+}
