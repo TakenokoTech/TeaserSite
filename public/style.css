@@ -10,7 +10,7 @@ body {
 
 .webgl-content {
     position: fixed;
-    width: 80%;
+    width: 64%;
     z-index: 1;
-    left: 20%;
+    left: 36%;
 }

@@ -1,4 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import Modal from 'react-modal';
+import _ from 'underscore'
+
+import 'materialize-css/dist/js/materialize.js'
+import 'materialize-css/dist/css/materialize.css'
 import './css/App.css';
 import './css/SubTitle1.css';
 
@@ -8,6 +13,36 @@ import sampleImage2 from './img/sample2.png'
 // import Three from './Three'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      showModal: false,
+      image: [
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+        sampleImage1, sampleImage2,
+      ]
+    }
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal () {
+    this.setState({ showModal: true });
+  }
+  
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return (
       <Fragment>
@@ -23,28 +58,36 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div id="subtitle1">
+        <div className="subtitle">
           <div className="size_title">サブタイトル</div>
           <div className="size_overview">
-            hogehogehogehogehogehogehogehogehogehogehogehogehogehoge
+            hogehogehogehogehogehogehogehogehogehogehogehogehogehoge<br/>
             hogehogehogehogehogehogehogehogehogehogehogehogehogehoge
           </div>
         </div>
         <div id="overview">
-          <img src={sampleImage1} className="image_cell" />
-          <img src={sampleImage2} className="image_cell" /><br />
-          <img src={sampleImage2} className="image_cell" />
-          <img src={sampleImage1} className="image_cell" /><br />
-          <img src={sampleImage1} className="image_cell" />
-          <img src={sampleImage2} className="image_cell" /><br />
+          { _.map(this.state.image, (img, i) => <img key={i} src={img} className="waves-effect z-depth-2 image_cell" onClick={this.handleOpenModal} />) }
         </div>
-        <div id="subtitle1">
+        <div className="subtitle">
           <div className="size_title">サブタイトル</div>
           <div className="size_overview">
-            hogehogehogehogehogehogehogehogehogehogehogehogehogehoge
+            hogehogehogehogehogehogehogehogehogehogehogehogehogehoge<br/>
             hogehogehogehogehogehogehogehogehogehogehogehogehogehoge
           </div>
         </div>
+        <div id="overview">
+          { _.map(this.state.image, (img, i) => <img key={i} src={img} className="waves-effect z-depth-2 image_cell" onClick={this.handleOpenModal} />) }
+        </div>
+        
+        <Modal
+          isOpen={this.state.showModal}
+          contentLabel="Minimal Modal Example"
+          style={{
+            overlay: { backgroundColor: '#000000CC' },
+            content: { backgroundColor: '#F4F4F4' }}}>
+          <img src={sampleImage1} />
+          <a class="waves-effect waves-light teal-text" onClick={this.handleCloseModal}><i class="material-icons">clear</i></a>
+        </Modal>
       </Fragment>
     );
   }

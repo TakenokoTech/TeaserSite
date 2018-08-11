@@ -1,15 +1,30 @@
 #overview {
-    height: 600px;
+    position: relative;
+    min-height: 600px;
+    width: 50%;
     padding: 16px;
+    overflow: hidden;
 }
 
 #character_dialog {
+    position: absolute;
     display: inline-block;
     padding: 16px;
-    margin: 64px 0;
+    margin: 40px 16px;
     background-color: #90e7ff66;
     border: #6222 solid 2px;
     border-radius: 8px;
+    right: 16px;
+}
+
+@media screen and (max-width: 800px) {
+    #overview {
+        width: 100%;
+    }
+    #character_dialog {
+        right: auto;
+        bottom: 0px
+    }
 }
 
 #chara_name {
@@ -21,16 +36,20 @@
     padding: 4px 0;
 }
 
-#subtitle1 {
+.subtitle {
+    position: sticky;
+    top: 0px;
     width: 100%;
     align-content: center;
     background-color: #222;
+    z-index: 20;
 }
 
 .image_cell {
-    width: 180px;
-    height: 180px;
-    padding: 8px;
+    width: 160px;
+    height: 160px;
+    margin: 4px;
+    opacity: 0.9;
 }
 
 .size_title {
@@ -43,4 +62,37 @@
     padding: 0 32px 32px;
     font-size: 1.2em;
     color: #FFF;
+}
+
+.ReactModal__Overlay {
+    z-index: 1000;
+    opacity: 0;
+}
+
+.ReactModal__Overlay--after-open,
+.ReactModal__Content--after-open {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.ReactModal__Overlay--before-close,
+.ReactModal__Content--before-close {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.ReactModal__Overlay img {
+    position: absolute;
+    margin: auto;
+    height: 100%;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+}
+
+.ReactModal__Overlay a {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border-radius: 0 0 2px 2px;
 }
