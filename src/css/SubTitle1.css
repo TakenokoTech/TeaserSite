@@ -11,10 +11,11 @@
     display: inline-block;
     padding: 16px;
     margin: 40px 16px;
-    background-color: #90e7ff66;
+    background-color: #00BFA5DD;
     border: #6222 solid 2px;
     border-radius: 8px;
     right: 16px;
+    transition: opacity 200ms;
 }
 
 @media screen and (max-width: 800px) {
@@ -26,14 +27,27 @@
         bottom: 0px
     }
 }
+  
 
 #chara_name {
-    font-size: 1.8em;
+    font-size: 2.4em;
     font-weight: bold;
+    color: #FFD54F;
+}
+
+#chara_name span {
+    font-size: 0.6em;
 }
 
 #chara_grade {
+    font-size: 1.2em;
     padding: 4px 0;
+    color: #FFF8E1;
+}
+
+#chara_desc {
+    font-size: 1.2em;
+    color: #FFF8E1;
 }
 
 .subtitle {
@@ -41,7 +55,7 @@
     top: 0px;
     width: 100%;
     align-content: center;
-    background-color: #222;
+    background-color: #00BFA5;
     z-index: 20;
 }
 
@@ -50,18 +64,20 @@
     height: 160px;
     margin: 4px;
     opacity: 0.9;
+    background-color: #F6F6F6
 }
 
 .size_title {
     padding: 32px;
     font-size: 2.0em;
-    color: #43d7ff;
+    color: #FFD54F;
+    font-weight: bold;
 }
 
 .size_overview {
     padding: 0 32px 32px;
     font-size: 1.2em;
-    color: #FFF;
+    color: #FFF8E1;
 }
 
 .ReactModal__Overlay {
