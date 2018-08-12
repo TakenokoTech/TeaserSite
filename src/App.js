@@ -8,7 +8,7 @@ import './css/App.css';
 import './css/SubTitle1.css';
 
 import sampleImage1 from './img/sample1.png'
-import sampleImage2 from './img/sample2.png'
+// import sampleImage2 from './img/sample2.png'
 import sampleImage3 from './img/c1.png'
 import sampleImage4 from './img/c2.png'
 import sampleImage5 from './img/c3.png'
@@ -23,9 +23,9 @@ class App extends Component {
       showModal: false,
       showNumber: 0,
       image: [
-        sampleImage1, sampleImage2,sampleImage3, sampleImage4, sampleImage5,
-        sampleImage1, sampleImage2,sampleImage3, sampleImage4, sampleImage5,
-        sampleImage1, sampleImage2,sampleImage3, sampleImage4, sampleImage5,
+        sampleImage1, sampleImage5, sampleImage3, sampleImage4,
+        sampleImage3, sampleImage4, sampleImage5, sampleImage1,
+        sampleImage4, sampleImage1, sampleImage3, sampleImage5,
       ]
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
