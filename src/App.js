@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Modal from 'react-modal';
+import Observer from 'react-intersection-observer'
 import _ from 'underscore'
 
 import 'materialize-css/dist/js/materialize.js'
@@ -30,6 +31,7 @@ class App extends Component {
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleAction = this.handleAction.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +43,11 @@ class App extends Component {
   
   handleCloseModal () {
     this.setState({ showModal: false });
+  }
+
+  handleAction (action) {
+    console.log(`handleAction ${action}`)
+    window.gameInstance.SendMessage("konono", "ChangeAction", action);
   }
 
   render() {
@@ -57,13 +64,13 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="subtitle z-depth-3">
+        <Observer tag="div" className="subtitle z-depth-3" onChange={inView => this.handleAction(inView ? "Rest" : "") }>
           <div className="size_title">サブタイトル</div>
           <div className="size_overview">
             hogehogehogehogehogehogehogehogehogehogehogehogehogehoge<br/>
             hogehogehogehogehogehogehogehogehogehogehogehogehogehoge
           </div>
-        </div>
+        </Observer>
         <div id="overview">
           { _.map(this.state.image, (img, i) => <img key={i} src={img} className="waves-effect z-depth-2 image_cell" onClick={() => this.handleOpenModal(i)} />) }
         </div>

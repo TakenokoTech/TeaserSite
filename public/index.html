@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
     <script src="%PUBLIC_URL%/unity/Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "%PUBLIC_URL%/unity/Build/Build.json");
+      window.gameInstance = UnityLoader.instantiate("gameContainer", "%PUBLIC_URL%/unity/Build/Build.json");
     </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
